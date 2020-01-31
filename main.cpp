@@ -4,7 +4,14 @@
 
 using namespace std;
 
+void showSimpleWin();
+
 int main() {
+    showSimpleWin();
+    return 0;
+}
+
+void showSimpleWin() {
     initscr();
     cbreak();
     noecho();
@@ -27,5 +34,4 @@ int main() {
 
     getch();
     endwin();
-    return 0;
 }
