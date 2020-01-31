@@ -860,7 +860,43 @@ indicator.
  *
  */
 
+// ====================================================================================================================
+// Draw borders
+// ====================================================================================================================
+
+PDCEX  int     border(chtype, chtype, chtype, chtype, chtype, chtype, chtype, chtype);
+
+/**
+ * The border, wborder and box routines draw a box around the edges of a window.
+ *
+ * box(win, verch, horch) is a shorthand for the following call: wborder(win, verch, verch, horch, horch, 0, 0, 0, 0).
+ *
+ * @return
+ */
+PDCEX  int     box(WINDOW *, chtype, chtype);
+/**
+ * int wborder( WINDOW *win,
+ *              chtype ls, chtype rs, chtype ts, chtype bs,
+ *              chtype tl, chtype tr, chtype bl, chtype br);
+ *
+ * ls - left side,
+ * rs - right side,
+ * ts - top side,
+ * bs - bottom side,
+ *
+ * tl - top left-hand corner,
+ * tr - top right-hand corner,
+ * bl - bottom left-hand corner, and
+ * br - bottom right-hand corner.
+ *
+ * @return
+ */
+PDCEX  int     wborder(WINDOW *, chtype, chtype, chtype, chtype, chtype, chtype, chtype, chtype);
+
+// ====================================================================================================================
+
 /* Standard */
+
 
 PDCEX  int     addch(const chtype);
 PDCEX  int     addchnstr(const chtype *, int);
@@ -878,9 +914,9 @@ PDCEX  int     baudrate(void);
 PDCEX  int     beep(void);
 PDCEX  int     bkgd(chtype);
 PDCEX  void    bkgdset(chtype);
-PDCEX  int     border(chtype, chtype, chtype, chtype,
-                      chtype, chtype, chtype, chtype);
-PDCEX  int     box(WINDOW *, chtype, chtype);
+
+
+
 PDCEX  bool    can_change_color(void);
 PDCEX  int     cbreak(void);
 PDCEX  int     chgat(int, attr_t, short, const void *);
@@ -1086,8 +1122,7 @@ PDCEX  int     wattr_on(WINDOW *, attr_t, void *);
 PDCEX  int     wattr_set(WINDOW *, attr_t, short, void *);
 PDCEX  void    wbkgdset(WINDOW *, chtype);
 PDCEX  int     wbkgd(WINDOW *, chtype);
-PDCEX  int     wborder(WINDOW *, chtype, chtype, chtype, chtype,
-                       chtype, chtype, chtype, chtype);
+
 PDCEX  int     wchgat(WINDOW *, int, attr_t, short, const void *);
 PDCEX  int     wclear(WINDOW *);
 PDCEX  int     wclrtobot(WINDOW *);
