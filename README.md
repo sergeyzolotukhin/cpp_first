@@ -6,6 +6,13 @@
 #### Compilers
     
     MinGW 
+   
+#### Make utils
+    
+    wmake - Watcom
+    make
+    nmake - MSVC
+    mingw32-make - MinGW
     
 #### CMAKE
     

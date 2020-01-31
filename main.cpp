@@ -1,18 +1,16 @@
-#include <iostream>
-#include <windows.h>
-#include "library.h"
+//#include <iostream>
+#include "curses.h"
 
 using namespace std;
 
 int main() {
-    HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    int i;
-    for (i = 0; i < 2; ++i) {
-        SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_RED);
-        std::cout << i << " In color" << std::endl;
-    }
+    initscr();
 
-    hello();
+    mvprintw( 5, 5, "Hello, World!" );
+    getch();
+
+    endwin();
+    return 0;
 
     return 0;
 }
