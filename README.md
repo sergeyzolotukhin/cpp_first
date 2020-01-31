@@ -5,4 +5,8 @@
     
 #### Compilers
     
-    MinGW     
+    MinGW 
+    
+#### CMAKE
+    
+    https://habr.com/ru/post/155467/    
