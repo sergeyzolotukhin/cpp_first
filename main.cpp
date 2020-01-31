@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include "library.h"
 
 using namespace std;
 
@@ -10,5 +11,8 @@ int main() {
         SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_RED);
         std::cout << i << " In color" << std::endl;
     }
+
+    hello();
+
     return 0;
 }
