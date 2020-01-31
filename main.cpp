@@ -11,10 +11,11 @@ int main() {
 
 //    mvprintw( 5, 5, "Hello, World!" );
 
+    const int max = 5;
 
-    WINDOW *my_wins[3];
-    PANEL  *my_panels[3];
-    int lines = 10, cols = 40, y = 2, x = 4, i, max = 5;
+    int lines = 10, cols = 40, y = 2, x = 4, i;
+    WINDOW *my_wins[max];
+    PANEL  *my_panels[max];
 
     for(i = 0; i < max; ++i) {
         my_wins[i] = newwin(lines, cols, y + 1 * i, x + 5 * i);
