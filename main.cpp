@@ -9,8 +9,6 @@ int main() {
     cbreak();
     noecho();
 
-//    mvprintw( 5, 5, "Hello, World!" );
-
     const int max = 5;
 
     int lines = 10, cols = 40, y = 2, x = 4, i;
@@ -23,8 +21,6 @@ int main() {
 
         my_panels[i] = new_panel(my_wins[i]);
     }
-
-    update_panels();
 
     update_panels();
     doupdate();
