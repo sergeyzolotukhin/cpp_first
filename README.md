@@ -16,4 +16,10 @@
     
 #### CMAKE
     
-    https://habr.com/ru/post/155467/    
+    https://habr.com/ru/post/155467/
+    
+#### ncurses
+    
+    https://code-live.ru/post/terminal-mode-management-ncurses/
+    http://tldp.org/HOWTO/NCURSES-Programming-HOWTO/panels.html
+        
