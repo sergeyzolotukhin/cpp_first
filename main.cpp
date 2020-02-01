@@ -24,10 +24,8 @@
 using namespace std;
 
 void init_wins(WINDOW **wins, int n);
-
-void wshow(WINDOW *win, char *label, int label_color);
-
-void wtitle(WINDOW *win, char *title, chtype color);
+void wShow(WINDOW *win, char *title, int title_color);
+void wTitle(WINDOW *win, char *title, chtype color);
 
 void show_win_my();
 
@@ -98,31 +96,31 @@ void init_wins(WINDOW **wins, int n) {
     for (i = 0; i < n; ++i) {
         wins[i] = newwin(NLINES, NCOLS, y, x);
         sprintf(label, "Window Number %d", i + 1);
-        wshow(wins[i], label, i + 1);
+        wShow(wins[i], label, i + 1);
         y += 3;
         x += 7;
     }
+
+    refresh();
 }
 
-void wborder(WINDOW *win) {
+void wBorder(WINDOW *win) {
     wborder(win,
             BOX_D_VLINE, BOX_D_VLINE, BOX_D_HLINE, BOX_D_HLINE,
             BOX_D_TL_CORNER, BOX_D_TR_CORNER, BOX_D_BL_CORNER, BOX_D_BR_CORNER);
 }
 
-void wshow(WINDOW *win, char *title, int label_color) {
+void wShow(WINDOW *win, char *title, int title_color) {
     wbkgd(win, WINDOW_COLOR);
 
     wattron(win, BORDER_COLOR);
-    wborder(win);
+    wBorder(win);
     wattroff(win, BORDER_COLOR);
 
-    wtitle(win, title, COLOR_PAIR(label_color));
-
-    refresh();
+    wTitle(win, title, COLOR_PAIR(title_color));
 }
 
-void wtitle(WINDOW *win, char *title, chtype color) {
+void wTitle(WINDOW *win, char *title, chtype color) {
     wattron(win, color);
     mvwprintw(win, 0, 2, "%s", title);
     wattroff(win, color);
