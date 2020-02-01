@@ -5,6 +5,13 @@
 #define NLINES 10
 #define NCOLS 40
 
+#define BOX_D_VLINE 0xBA
+#define BOX_D_HLINE 0xCD
+#define BOX_D_TL_CORNER 0xC9
+#define BOX_D_TR_CORNER 0xBB
+#define BOX_D_BL_CORNER 0xC8
+#define BOX_D_BR_CORNER 0xBC
+
 using namespace std;
 
 void showSimpleWin();
@@ -93,7 +100,9 @@ void win_show(WINDOW *win, char *label, int label_color) {
     getbegyx(win, startY, startX);
     getmaxyx(win, height, width);
 
-    box(win, 0, 0);
+    wborder(win,
+            BOX_D_VLINE, BOX_D_VLINE, BOX_D_HLINE, BOX_D_HLINE,
+            BOX_D_TL_CORNER, BOX_D_TR_CORNER, BOX_D_BL_CORNER, BOX_D_BR_CORNER);
 
     mvwaddch(win, 2, 0, ACS_LTEE);
     mvwhline(win, 2, 1, ACS_HLINE, width - 2);

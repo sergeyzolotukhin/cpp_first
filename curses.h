@@ -891,7 +891,9 @@ PDCEX  int     box(WINDOW *, chtype, chtype);
  *
  * @return
  */
-PDCEX  int     wborder(WINDOW *, chtype, chtype, chtype, chtype, chtype, chtype, chtype, chtype);
+PDCEX  int     wborder(WINDOW *,
+        chtype, chtype, chtype, chtype,
+        chtype, chtype, chtype, chtype);
 
 // ====================================================================================================================
 
