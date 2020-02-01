@@ -12,6 +12,12 @@
 #define BOX_D_BL_CORNER 0xC8
 #define BOX_D_BR_CORNER 0xBC
 
+#define BORDER_COLOR_NO 10
+#define BORDER_COLOR COLOR_PAIR(BORDER_COLOR_NO)
+
+#define WINDOW_COLOR_NO 20
+#define WINDOW_COLOR COLOR_PAIR(WINDOW_COLOR_NO)
+
 using namespace std;
 
 void showSimpleWin();
@@ -42,10 +48,13 @@ void show_win_my() {
     noecho();
     keypad(stdscr, TRUE);
 
-    init_pair(1, COLOR_RED, COLOR_BLACK);
-    init_pair(2, COLOR_GREEN, COLOR_BLACK);
-    init_pair(3, COLOR_BLUE, COLOR_BLACK);
-    init_pair(4, COLOR_CYAN, COLOR_BLACK);
+    init_pair(1, COLOR_RED, COLOR_BLUE);
+    init_pair(2, COLOR_GREEN, COLOR_BLUE);
+    init_pair(3, COLOR_YELLOW, COLOR_BLUE);
+    init_pair(4, COLOR_WHITE, COLOR_BLACK);
+
+    init_pair(BORDER_COLOR_NO, COLOR_WHITE, COLOR_BLUE);
+    init_pair(WINDOW_COLOR_NO, COLOR_WHITE, COLOR_BLUE);
 
     init_wins(my_wins, 3);
 
@@ -94,21 +103,20 @@ void init_wins(WINDOW **wins, int n) {
     }
 }
 
-void win_show(WINDOW *win, char *label, int label_color) {
-    int startX, startY, height, width;
-
-    getbegyx(win, startY, startX);
-    getmaxyx(win, height, width);
-
+void wborder(WINDOW *win) {
     wborder(win,
             BOX_D_VLINE, BOX_D_VLINE, BOX_D_HLINE, BOX_D_HLINE,
             BOX_D_TL_CORNER, BOX_D_TR_CORNER, BOX_D_BL_CORNER, BOX_D_BR_CORNER);
+}
 
-    mvwaddch(win, 2, 0, ACS_LTEE);
-    mvwhline(win, 2, 1, ACS_HLINE, width - 2);
-    mvwaddch(win, 2, width - 1, ACS_RTEE);
+void win_show(WINDOW *win, char *label, int label_color) {
+    wbkgd(win, WINDOW_COLOR);
+    wattron(win, BORDER_COLOR);
+    wborder(win);
+    wattroff(win, BORDER_COLOR);
 
-    print_in_middle(win, 1, 0, width, label, COLOR_PAIR(label_color));
+    int width = getmaxx(win);
+    print_in_middle(win, 0, 0, width, label, COLOR_PAIR(label_color));
 }
 
 void print_in_middle(WINDOW *win, int startY, int startX, int width, char *string, chtype color) {

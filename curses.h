@@ -965,6 +965,16 @@ PDCEX  int     inchnstr(chtype *, int);
 PDCEX  int     inchstr(chtype *);
 PDCEX  chtype  inch(void);
 PDCEX  int     init_color(short, short, short, short);
+/**
+ *
+ * @param
+ *
+ * color_no
+ * foreground color
+ * background color
+ *
+ * @return
+ */
 PDCEX  int     init_pair(short, short, short);
 PDCEX  WINDOW *initscr(void);
 PDCEX  int     innstr(char *, int);
