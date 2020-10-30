@@ -33,9 +33,11 @@ void wTitle(WINDOW *win, char *title, chtype color);
 
 void show_win_my();
 
-//    show_win_my();
-
 int main() {
+    show_win_my();
+}
+
+int main1() {
     STARTUPINFO si;
     PROCESS_INFORMATION pi;
 
