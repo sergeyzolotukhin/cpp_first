@@ -37,35 +37,6 @@ int main() {
     show_win_my();
 }
 
-int main1() {
-    STARTUPINFO si;
-    PROCESS_INFORMATION pi;
-
-    ZeroMemory(&si, sizeof(si));
-    ZeroMemory(&pi, sizeof(pi));
-
-    si.cb = sizeof(si);
-
-    if (!CreateProcess(R"(C:\WINDOWS\system32\cmd.exe)", nullptr, nullptr, nullptr, FALSE, CREATE_NEW_CONSOLE, nullptr, nullptr, &si, &pi)) {
-        printf("\nSorry! CreateProcess() failed.\n\n");
-    } else {
-        printf("\nWell, CreateProcess() looks OK.\n");
-        printf("exit after 5000 ms...\n\n");
-    }
-
-    WaitForSingleObject(pi.hProcess, 5000);
-
-    printf("\n");
-
-    if (CloseHandle(pi.hProcess) != 0)
-        printf("The process handle has been closed successfully\n");
-
-    if (CloseHandle(pi.hThread) != 0)
-        printf("The thread handle has been closed successfully\n");
-
-    return 0;
-}
-
 void show_win_my() {
     WINDOW *my_wins[3];
     PANEL *my_panels[3];
