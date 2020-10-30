@@ -29,4 +29,7 @@
     http://techminded.net/blog/modular-c-projects-with-cmake.html
     https://github.com/gokhanettin/cmake-example
     
+#### JNI
+    
+    https://habr.com/ru/post/353294/
         
