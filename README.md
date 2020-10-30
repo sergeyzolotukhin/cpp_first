@@ -32,4 +32,5 @@
 #### JNI
     
     https://habr.com/ru/post/353294/
+    https://habr.com/ru/post/222997/
         
