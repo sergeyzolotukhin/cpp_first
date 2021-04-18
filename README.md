@@ -34,3 +34,6 @@
     https://habr.com/ru/post/353294/
     https://habr.com/ru/post/222997/
         
+#### PlatformIO for CLion
+
+    [PlatformIO for CLion](https://docs.platformio.org/en/latest/integration/ide/pioide.html)
