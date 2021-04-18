@@ -24,6 +24,7 @@
     http://tldp.org/HOWTO/NCURSES-Programming-HOWTO/panels.html
     https://en.wikipedia.org/wiki/Box-drawing_character
     https://github.com/wmcbrine/PDCurses/blob/master/sdl2/README.md
+    https://github.com/Bill-Gray/PDCursesMod
     
 #### Modular C++ projects with CMake
 

@@ -34,7 +34,9 @@ void wTitle(WINDOW *win, char *title, chtype color);
 void show_win_my();
 
 int main() {
+    traceon();
     show_win_my();
+    traceoff();
 }
 
 void show_win_my() {
